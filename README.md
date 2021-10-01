@@ -1,14 +1,25 @@
-# blockchain-developer-bootcamp-final-project
-
-- The project I chose to work is about solving a problem that crowdfunding platforms have by : 
-         -  Using smart contracts technology to improve the trustability of the funds. 
+<strong> Description </strong> 
 
 
-The platform will contain blockchain projects made by developpers, and for each one, anyone can participate to the project by :
-
-     - sending a transaction to the pool using the ERC20 network. 
-     
-Each participant can follow the progress of the project and indeed choose to withdraw his part of the participation if the project used to be stopped or useless. 
+A smart contract helps to block the funds within blockchain until the project or startup founder makes progress in the project. 
 
 
-         
+
+
+
+<h1> Directory structure </h1> 
+
+I will start by creating the croudfunding campaign first. 
+With the use of blockchain trustless , the platform will keep track of the contributors. 
+
+
+Anyone can contribute to a project with a <strong> minimum entry point </strong> 
+
+Projects allowed are github projects involving the blockchain only, so it should be something related to blockchain.
+
+
+
+
+<h1> Frontend project </h1> 
+
+
