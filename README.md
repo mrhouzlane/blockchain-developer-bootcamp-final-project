@@ -1,7 +1,9 @@
 <strong> Description </strong> 
 
 
-A smart contract helps to block the funds within blockchain until the project or startup founder makes progress in the project. 
+A smart contract helps to block the funds within blockchain until the project or startup founder makes progress in the project.
+
+The project will develop a smart-contract driven crowdfunding platform built on Ethereum blockchain. 
 
 The project will focus on two main events : 
 
