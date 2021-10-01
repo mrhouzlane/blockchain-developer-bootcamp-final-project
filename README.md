@@ -25,13 +25,29 @@ I will start by creating the croudfunding campaign first.
 With the use of blockchain trustless , the platform will keep track of the contributors. 
 
 
-Anyone can contribute to a project with a <strong> minimum entry point </strong> 
+Anyone can contribute to a project with a <strong> minimum entry point : 0.05 ETH </strong> 
 
 Projects allowed are github projects involving the blockchain only, so it should be something related to blockchain.
+
+Members can verify all the transactions on Ethereum. 
+
+
+
 
 
 
 
 <h1> Frontend project </h1> 
+
+The project should keeping running and never go offline .
+
+Will be built on : 
+
+- Layer 2 Network 
+- Compound 
+- Aave 
+
+
+
 
 
