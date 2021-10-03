@@ -47,6 +47,10 @@ Will be built on :
 - Compound 
 - Aave 
 
+- Mutiple funders will be defined into structs with solidity . 
+
+
+
 
 
 
