@@ -45,7 +45,8 @@ Will be built on :
 
 - Layer 2 Network 
 - Compound 
-- Aave 
+- Aave (lending and borrowing platform) using data feed. 
+- 
 
 - Mutiple funders will be defined into structs with solidity . 
 
