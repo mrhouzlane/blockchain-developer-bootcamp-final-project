@@ -44,40 +44,41 @@ The project become a pool where the Founder sets :
 
 > Pools are managed by the Founders. 
 
-* Founder can : 
-<ol> 
- <li> <strong>Deposit</strong> a project </li>
- 
-
- </ol> 
+ Founder can : 
+<ul> 
+ <li> Deposit a project </li> 
+ </ul> 
 
 
-* Public (donor) can : 
-<ol> 
+Public (donor) can : 
+<ul> 
  <li> participate to the pool </li> 
- <li> redeem only if ( <em> this part has to be completed to allow the pool to continue growing without donors withdrawing their money </em>) </li> 
+ <li> redeem  </li> 
  <li> claim % rewards </li> 
- </ol>
+ </ul>
 
 
 > The Founder is the owner of the pool :
 
-*functions are : 
+ Functions are : 
 
 - createPool
 - chooseToken
 - setUpreward1 (25%) / setUpreward2 (50%) / setUpreward3 (75%) / setUpreward4 (100%) 
 - withdrawTotal (this function is deployed when the amount desired by the project owner has been reached or exceeded ) 
 
-* Underlying protocols : 
+ # Underlying protocols 
 
  - <strong> Polkastarter </strong> : Leading IDO platform in the crypto ecocystem 
  - <strong> Chainlink Oracle </strong> : to convert FIAT into Stablecoins ?? (<em> to rewiew </em> ) 
+ - <strong> Uniswap </strong> : projects on Polkastarter linked to Uniswap 
  
  # Programming languages  
  <ul> 
+  
    <li> Solidity </li> 
    <li> React </li> 
+
  </ul> 
  
  
