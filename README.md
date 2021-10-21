@@ -11,8 +11,19 @@ The project become a pool where he has to set :
  Quick example :
  
  If target = 40,000 $ , then a mechanism will convert this on the choice of the Founder token price (Oracle) 
- Set up (Founder / owner )  :  % rewards at 25% of the target is 20% (%chosen by the Founder )
-                               % rewards at 50% of the target is 10% (%choosen by the Founder ) 
+ Set up (Founder / owner )  :  
+ 
+ Restrictions : 
+ 
+  *% rewards at 25% of the target < % % rewards at 50% of the target etc ..  : Goal : encourage donors to participate in the project at the beginning, not at the     end 
+ 
+ - > % rewards at 25% of the target is 20% (%chosen by the Founder )
+ - > % rewards at 50% of the target is 10% (%choosen by the Founder ) 
+ - > % rewards at 75% of the target is 5% (%choosen by the Founder ) 
+
+
+
+ 
            
        
            
