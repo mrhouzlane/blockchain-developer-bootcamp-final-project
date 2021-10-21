@@ -1,6 +1,6 @@
 #PROTOCOL 
 
-**ACTIONS 
+
 
 
 > Pools are managed by the Founders. 
