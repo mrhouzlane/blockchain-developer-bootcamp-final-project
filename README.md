@@ -1,3 +1,40 @@
+#PROTOCOL 
+
+**ACTIONS 
+
+
+> Pools are managed by the Founders. 
+
+* Founders can : 
+
+- Deposit a project 
+- claim % rewards 
+
+
+* public can : 
+
+- mint 
+- redeem
+- claim % rewards 
+
+> The Founder is the owner of the pool :
+
+// functions are 
+
+- createPool
+- withdrawTotal (this function is deployed when the amount desired by the project owner has been reached or exceeded ) 
+
+** Underlying protocols : 
+
+- Polkastarter 
+
+
+
+
+
+
+
+
 <strong> Description </strong> 
 
 
