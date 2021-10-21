@@ -11,6 +11,8 @@ The project become a pool where the Founder sets :
  Quick example :
  
  If target = 40,000 $ , then a mechanism will convert this on the choice of the Founder token price (Oracle) 
+ 
+ 
  Set up (Founder / owner )  :  
  
  Restrictions : 
