@@ -4,7 +4,7 @@
 The idea here is to build a DApp where anyone with a github project url can deposit it and become the Founder.
 The Founder will put his url project and his public metamask address. 
 
-The project become a pool where he has to set : 
+The project become a pool where the Founder sets : 
  - the target price to reach (crowdfunding method). 
  - the % of rewards he allows donors to claim every step. 
  
