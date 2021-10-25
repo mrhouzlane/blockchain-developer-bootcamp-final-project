@@ -1,4 +1,4 @@
-# CROWDFUNDING FOR EARLY CRYPTO PROJECTS <strong> IDO </strong> 
+# FIXED SWAP POOL 
 
 
 <h1> Description </h1>
@@ -44,9 +44,13 @@ The project become a pool where the Founder sets :
 
 > Pools are managed by the Founders. 
 
- Founder can : 
+ Founder/Pool creator can : 
 <ul> 
- <li> Deposit a project </li> 
+  <li> Enter Token contract address </li> 
+  <li> Name of the pool</li> 
+  <li> Limit per address</li> 
+  <li> Type of pool access(public,private,whitelist)</li> 
+  <li> Token Price </li> 
  </ul> 
 
 
