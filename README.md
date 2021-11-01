@@ -1,9 +1,18 @@
 # Betting Pool Dapp 
 
-<h4> Why building a Betting Pool and not a Classical Betting platform ? </h4> 
+<h4> Why Blockchain for a regulated prediction market ?  </h4> 
 
-<p> Every human in this earth wants to participate to something, sometimes by risking his money. This is what we refer to gambling. But gambling through the years was always about wins and loses , about all in , getting rich quick or becoming poor from one day to another. Why don't we break the rules of betting ? What about loosing a bet and still getting rewards from the pool you are betting in (pool here means the total amount bet on the outcome 1 or 2 ). 
-This is where we want to innovate. IMAGINE LOOSING A BET AND STILL GETTING REWARDS FROM THE POOL ! This means your balance will never be 0 ! YOU WILL ALWAYS BE ALIVE AND IN THE GAME  !!! 
+<p><ul> Security : 
+<li> Non custodial </li> </p></ul>
+
+<p><ul> Transparency : 
+<li> Fully collateralized </li>
+<li> On chain </li> </p></ul>
+
+
+<p><ul> Interoperability :   
+<li> DAI denominated Markets  </li></ul>
+
 
 
 <h1> Description </h1>
