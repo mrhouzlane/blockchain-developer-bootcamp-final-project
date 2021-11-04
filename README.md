@@ -1,105 +1,69 @@
-# Betting Pool Dapp 
-
-<h4> Why Blockchain for a regulated prediction market ?  </h4> 
-
-<p><ul> Security : 
-<li> Non custodial </li> </p></ul>
-
-<p><ul> Transparency : 
-<li> Fully collateralized </li>
-<li> On chain </li> </p></ul>
+# Betting with ConditionalTokens. 
 
 
-<p><ul> Interoperability :   
-<li> DAI denominated Markets  </li></ul>
+<h4> Why using Conditonal Tokens to make bets ? </h4>
 
+<p> Gambling sector : The global online betting market is growing 11.5% annually. estimated to reach about $93 billion by 2023.
+   
 
 
 <h1> Description </h1>
 
-<p> 
-A betting platform where a player will bet on 2 outcomes : 1 or 2. His bet will be added to other players bet and he will earn a share of the pool if he looses.
-If he wins he will get his rewards (bet amount * (odds -1) ) and a share of the rewards. So even if you loose you get some rewards. 
+<p> This betting Dapp is based on Gnosis implementation of Conditional Tokens </p> 
+Please refer to this link : https://docs.gnosis.io/conditionaltokens/docs/devguide01/ to get all informations about the coding process. 
+
+<h3> Structure </h3> 
+
+On top of the imported ERC20 and ERC1155 will be coded a program to createBet and to redeemTokens.
+
+<string> Example :</string> 
+Let's say we have 3 outcomes possible to the question : <q> Who will win the Ballon d'or 2021 ?  </q> :
+
+<dl>
+<dt> 1. Messi </dt>
+<dt> 2. Benzema </dt>
+<dt> 3. Lewandowski </dt>
+</dl>
+
+To get the ConditionId 3 parameters are needed : 
+
+<ul>
+  <li>oracle's address : the account assigned to report the result for the prepared condition. </li>
+ <li>a 32bytes address for the questionId.  </li>
+ <li>the number of outcomeSlots identified as outcomeSlotsCount which is 3 here </li>
+  
  
-Imagine : 
- 
- <em> <ul> Player 1 : <em> 
-  <li> bets 200 DAI on the outcome 1 (team 1 wins) </li>
-  <li> the result is team 2 wins , so the winner outcome is 2 </li> 
-  <li> will loose his betting amount, but still wins a share of the pool*</li> 
- </ul> 
- 
-  *share of the pool : it is the amount of his bet divided by the totalamount of the pool <strong> (amountBet / totalAmountPool) * coeff 
-  with a coeff implemented depending of the size of the pool to let the website remain sustainable to control the amount that is given to the player who loses 
-  without having some tricks made by the players by arbitrage. 
+Situation 1 : 
   
 
- 
-
- 
- <em> Requirements : 
- 
-  We should verify that a player :
-  <ul> 
-   <li> has not placed a bet before </li> 
-   <li> bets an amount > minimumBet </li> 
-   <li> he exists in the players array to receive his reward </li> 
-   
-   </em> 
+<em> Player 1 :  bets 200 DAI on the outcome 1.Messi <em> : 
   
-  <em> Rewards : (approximations ) 
- 
-   
- In case Player looses : 
- - > If the amount of the player's bet is less than 25% of the pool size he will earn 0,15% of the totalPoolamount 
- - > If the amount of the player's bet is bigger than 25% of the pool size he will earn 0,25% of the totalPoolamount 
- ... 
-   
- In case Player wins : 
- - > The rewards are relative to his wins : he will get a %(Formula to implement). 
+  1. Our smart contract will receive 200 DAI as the collateral Token.
+  2. This 200 DAI will be splited into ConditionalTokens on the 3 outcomes possible
+  3. The oracle will report results of Condition and emits the payouts which is the oracle's answer. 
+  4. ConditionalTokens will be then transfered based on ERC1155. Since each token has a positionID, they are indexed to a corresponding conditionalToken. 
+  This is why the Receiver has to call the function ERC1155TokenReceiver to get the magic expected values. 
 
 
-# Front-end project
 
- <h2> PROTOCOL </h2> 
+# Underlying protocols
+
+  Oracles / LP Exchanges : 
+  <strong> Chainlink </strong> : import data for the odds
+  <strong> Uniswap </strong> : LP tokens in UniV3 position / import data for the odds 
 
 
-> Pools are outcomes like 1 or 2. 
+# Programming languages
 
- Player can : 
-<ul> 
-  <li> bet </li> 
-  <li> withdraw his rewards </li> 
-  <li> cash out depending on the odds fluctuations </li> 
-  
+ <ul>
 
- Functions are : 
-
-- distributePrizes
-- bet 
-- checkPlayerExists
-
- # Underlying protocols 
-
- - <strong> Chainlink Oracle </strong> : import data for the odds
- - <strong> 1inche </strong> : DeFi aggregator 
- 
- # Programming languages  
- <ul> 
-  
-   <li> Solidity </li> 
-   <li> React </li> 
-   <li> HTML </li> 
-   <li> Javascript </li> 
-
- </ul> 
- 
- 
- # Scalability 
- 
- First we will implement only 2 outcomes 1 or 2. Then we can add other outcomes like tie X , number of goals scored , team with most of goals, number of cards ... 
- Also we can use oracles like Chainlink oracle to 
+   <li> Solidity </li>
+   <li> React </li>
+   <li> HTML </li>
+   <li> Javascript </li>
  
 
+ </ul>
 
+# Scalability
 
