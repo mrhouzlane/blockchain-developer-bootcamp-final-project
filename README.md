@@ -46,15 +46,17 @@ Situation 1 :
 
 
 
-# Underlying protocols
+Underlying protocols
 
-  <ul> Oracles / LP Exchanges : 
-
+Oracles / LP Exchanges : 
+<ul> 
      <li> <strong> Chainlink </strong> : resolve the questionId  </li> 
      <li>  <strong> Uniswap </strong> : LP tokens </li> 
-
-   </ul> 
-# Programming languages
+   
+</ul> 
+   
+   
+Programming languages
 
  <ul>
 
