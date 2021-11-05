@@ -53,7 +53,7 @@ Situation 1 :
      <li> <strong> Chainlink </strong> : resolve the questionId  </li> 
      <li>  <strong> Uniswap </strong> : LP tokens </li> 
 
-   </u> 
+   </ul> 
 # Programming languages
 
  <ul>
