@@ -48,11 +48,12 @@ Situation 1 :
 
 # Underlying protocols
 
-  Oracles / LP Exchanges : 
-  <strong> Chainlink </strong> : resolve the questionId 
-  <strong> Uniswap </strong> : LP tokens 
+  <ul> Oracles / LP Exchanges : 
 
+     <li> <strong> Chainlink </strong> : resolve the questionId  </li> 
+     <li>  <strong> Uniswap </strong> : LP tokens </li> 
 
+   </u> 
 # Programming languages
 
  <ul>
