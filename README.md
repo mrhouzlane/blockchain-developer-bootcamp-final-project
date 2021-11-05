@@ -49,8 +49,8 @@ Situation 1 :
 # Underlying protocols
 
   Oracles / LP Exchanges : 
-  <strong> Chainlink </strong> : import data for the odds
-  <strong> Uniswap </strong> : LP tokens in UniV3 position / import data for the odds 
+  <strong> Chainlink </strong> : resolve the questionId 
+  <strong> Uniswap </strong> : LP tokens 
 
 
 # Programming languages
