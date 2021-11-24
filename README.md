@@ -1,4 +1,4 @@
-#blockchain-developer-bootcamp-final-project
+# blockchain-developer-bootcamp-final-project
 
 Repository created for the final Consensys Bootcamp 2021 project.
 
@@ -6,16 +6,16 @@ Repository created for the final Consensys Bootcamp 2021 project.
 
 An application that allows you to bet on either Team 1 or Team 2 or a draw and participate to the pool (1) , (2) or 3(draw). 
 
-#Problem 
+# Problem 
 
 Every betting platform is a win or loose. What is changing here is the possibility to still get rewards from a pool even if you loose,
 while participating to a pool when choosing your side. 
 
-#Solution
+# Solution
 
 smartBet will allow you to bet on a team and contributing to the pool of this team. 
 
-#Project Flow 
+# Project Flow 
 
 <ul> 
    <li> Create smart contract template that all better will use. </li> 
@@ -25,7 +25,7 @@ smartBet will allow you to bet on a team and contributing to the pool of this te
    <li> </li> 
 </ul> 
    
-#Future Ideas
+# Future Ideas
 
 <ul> 
    <li> Use IPFS or similar system to store user data </li> 
@@ -34,7 +34,7 @@ smartBet will allow you to bet on a team and contributing to the pool of this te
 </ul> 
 
 
-#Installation and Setup
+# Installation and Setup
 
 1. Clone the repository 
 
