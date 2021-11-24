@@ -2,7 +2,7 @@
 
 Repository created for the final Consensys Bootcamp 2021 project.
 
-#Application for betting on a team and getting rewards : 
+### Application for betting on a team and getting rewards : 
 
 An application that allows you to bet on either Team 1 or Team 2 or a draw and participate to the pool (1) , (2) or 3(draw). 
 
