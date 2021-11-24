@@ -1,72 +1,49 @@
-# Betting with ConditionalTokens. 
+#blockchain-developer-bootcamp-final-project
 
+Repository created for the final Consensys Bootcamp 2021 project.
 
-<h4> Why using Conditonal Tokens to make bets ? </h4>
+#Application for betting on a team and getting rewards : 
 
-<p> Gambling sector : The global online betting market is growing 11.5% annually. estimated to reach about $93 billion by 2023.
-   
+An application that allows you to bet on either Team 1 or Team 2 or a draw and participate to the pool (1) , (2) or 3(draw). 
 
+#Problem 
 
-<h1> Description </h1>
+Every betting platform is a win or loose. What is changing here is the possibility to still get rewards from a pool even if you loose,
+while participating to a pool when choosing your side. 
 
-<p> This betting Dapp is based on Gnosis implementation of Conditional Tokens </p> 
-Please refer to this link : https://docs.gnosis.io/conditionaltokens/docs/devguide01/ to get all informations about the coding process. 
+#Solution
 
-<h3> Structure </h3> 
+smartBet will allow you to bet on a team and contributing to the pool of this team. 
 
-On top of the imported ERC20 and ERC1155 will be coded a program to createBet and to redeemTokens.
+#Project Flow 
 
-<string> Example :</string> 
-Let's say we have 3 outcomes possible to the question : <q> Who will win the Ballon d'or 2021 ?  </q> :
-
-<dl>
-<dt> 1. Messi </dt>
-<dt> 2. Benzema </dt>
-<dt> 3. Lewandowski </dt>
-</dl>
-
-To get the ConditionId 3 parameters are needed : 
-
-<ul>
-  <li>oracle's address : the account assigned to report the result for the prepared condition. </li>
- <li>a 32bytes address for the questionId.  </li>
- <li>the number of outcomeSlots identified as outcomeSlotsCount which is 3 here </li>
-  
- 
-Situation 1 : 
-  
-
-<em> Player 1 :  bets 200 DAI on the outcome 1.Messi <em> : 
-  
-  1. Our smart contract will receive 200 DAI as the collateral Token.
-  2. This 200 DAI will be splited into ConditionalTokens on the 3 outcomes possible
-  3. The oracle will report results of Condition and emits the payouts which is the oracle's answer. 
-  4. ConditionalTokens will be then transfered based on ERC1155. Since each token has a positionID, they are indexed to a corresponding conditionalToken. 
-  This is why the Receiver has to call the function ERC1155TokenReceiver to get the magic expected values. 
-
-
-
-Underlying protocols
-
-Oracles / LP Exchanges : 
 <ul> 
-     <li> <strong> Chainlink </strong> : resolve the questionId  </li> 
-     <li>  <strong> Uniswap </strong> : LP tokens </li> 
-   
+   <li> Create smart contract template that all better will use. </li> 
+   <li> Create front end application for both better and brooker to interact with. </li> 
+   <li> Allow betters to choose their side and participate to a pool. </li> 
+   <li> </li> 
+   <li> </li> 
 </ul> 
    
+#Future Ideas
+
+<ul> 
+   <li> Use IPFS or similar system to store user data </li> 
+   <li> Use MetaMask to login to users account </li> 
+   <li> Add protocols (like UnlockProtocol -- NFT Contract ) to access Prenium betting advantages  </li> 
+</ul> 
+
+
+#Installation and Setup
+
+1. Clone the repository 
+
+```
+git clone PASTE_LINK_HERE
+
+```
+
+
    
-Programming languages
 
- <ul>
-
-   <li> Solidity </li>
-   <li> React </li>
-   <li> HTML </li>
-   <li> Javascript </li>
- 
-
- </ul>
-
-# Scalability
 
