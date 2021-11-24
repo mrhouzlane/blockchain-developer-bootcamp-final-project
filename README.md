@@ -43,6 +43,58 @@ git clone PASTE_LINK_HERE
 
 ```
 
+2. Install dependencies
+
+Do this in both the root and client directory
+
+```
+npm install
+
+```
+
+
+3.1 Install truffle and either Ganache or ganache-cli
+
+```
+npm -i -g truffle 
+
+```
+
+
+3.2For ganache-cli
+
+```
+npm -i -g ganache-cli
+```
+
+
+4. Initiate Ganache
+
+5. Install [Metamask](https://metamask.io/)
+
+6. Import Ganache accounts
+
+7. Deploy contracts to Ganache
+
++ If using ganache-cli, go to truffle config file and change network id to 8545.
+
+```
+truffle compile
+```
+
+Then run
+```
+truffle migrate
+```
+
+8.Start application from client directory
+```
+cd client
+npm start
+```
+
+
+
 
    
 
