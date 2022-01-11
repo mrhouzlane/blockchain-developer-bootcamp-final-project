@@ -1,97 +1,101 @@
+const Lottery = artifacts.require("Lottery");
 
-// SPDX-License-Identifier: MIT
 
-pragma solidity ^0.6.12;
+contract('Lottery', async (accounts) => {
 
-contract Lottery {
-    address payable[] public players;
-    address public manager;
-    address payable public winner;
+    it('should initialise lottery state to closed', async () => {
+        let instance = await Lottery.deployed();
+        let lottery_state = await instance.lottery_state();
+        assert.equal(lottery_state, 1)
+    })
 
-    enum LOTTERY_STATE {
-        OPEN,
-        CLOSED,
-        CALCULATING_WINNER
-    }
-    LOTTERY_STATE public lottery_state;
+    it('should set manager to account 0', async () => {
+        let instance = await Lottery.deployed();
+        let manager = await instance.manager();
+        assert.equal(manager, accounts[0])
+    })
 
-    constructor() public {
-        lottery_state = LOTTERY_STATE.CLOSED;
-        manager = msg.sender;
-    }
 
-    function startLottery() public {
-        require(msg.sender == manager, "only manager can start lottery");
-        require(
-            lottery_state == LOTTERY_STATE.CLOSED,
-            "Cannot start a new lottery yet"
-        );
+    it('should not let non manager to start lottery', async () => {
+        let instance = await Lottery.deployed();
+        try {
+            await instance.startLottery({ from: accounts[1] })
+        } catch (e) {
+        }
+        let lottery_state = await instance.lottery_state();
+        assert.equal(lottery_state, 1)
 
-        lottery_state = LOTTERY_STATE.OPEN;
-    }
+    })
 
-    function enter() public payable {
-        require(lottery_state == LOTTERY_STATE.OPEN);
-        require(msg.sender != manager);
-        require(msg.value >= 0.001 ether, "Not enough to enter");
-        players.push(msg.sender);
-    }
 
-    // helper function that returns a big random integer
-    function random() public view returns (uint256) {
-        return
-            uint256(
-                keccak256(
-                    abi.encodePacked(
-                        block.difficulty,
-                        block.timestamp,
-                        players.length
-                    )
-                )
-            );
-    }
+    it('should set lottery state to open', async () => {
+        let instance = await Lottery.deployed();
+        await instance.startLottery({ from: accounts[0] })
+        let lottery_state = await instance.lottery_state();
+        assert.equal(lottery_state, 0)
 
-    function pickWinner() public returns (address) {
-        lottery_state = LOTTERY_STATE.CALCULATING_WINNER;
+    })
 
-        // only the manager can pick a winner if there are at least 3 players in the lottery
-        require(msg.sender == manager);
-        require(players.length >= 3);
+    it('allows account to return balance of the contract', async () => {
+        let instance = await Lottery.deployed();
+        await instance.enter({ from: accounts[1], value: web3.utils.toWei('1', 'ether') });
+        let balance = await instance.getBalance({ from: accounts[0] });
+        assert.equal('1000000000000000000', balance.toString());
+    })
 
-        uint256 r = random();
-        // computing a random index of the array
-        uint256 index = r % players.length;
+    it('should return number of players entering the lottery', async () => {
+        let instance = await Lottery.deployed();
+        await instance.enter({ from: accounts[1], value: web3.utils.toWei('1', 'ether') });
+        let players = instance.players(1);
+        assert(players, accounts[1])
 
-        winner = players[index]; // this is the winner
-        return winner;
-    }
+    })
 
-    function rewardWinner() public {
-        require(msg.sender == manager);
-        uint256 managerFee = (getBalance() * 10) / 100; // manager fee is 10%
-        uint256 winnerPrize = (getBalance() * 90) / 100; // winner prize is 90%
+    it('should not let manager to enter lottery', async () => {
+        let instance = await Lottery.deployed();
+        try {
+            await instance.enter({ from: accounts[0], value: web3.utils.toWei('1', "ether") })
+        } catch (e) {
 
-        // transferring 90% of contract's balance to the winner
-        winner.transfer(winnerPrize);
+        }
+    })
 
-        // transferring 10% of contract's balance to the manager
-        payable(manager).transfer(managerFee);
-    }
+    it('should pick the winner of the Lottery', async () => {
+        let instance = await Lottery.deployed();
+        let randomness = await instance.random({ from: accounts[0] })
+        await instance.enter({ from: accounts[1], value: web3.utils.toWei('1', 'ether') });
+        let player1 = instance.players(1);
+        await instance.enter({ from: accounts[2], value: web3.utils.toWei('1', 'ether') });
+        let player2 = instance.players(2);
+        await instance.enter({ from: accounts[3], value: web3.utils.toWei('1', 'ether') });
+        let player3 = instance.players(3);
+        let players = [player1, player2, player3]
+        let picking = await instance.pickWinner({ from: accounts[0] })
+        let winner = instance.winner()
+        assert(picking, randomness % (players.length))
+        assert(winner, randomness % (players.length))
 
-    function endLottery() public {
-        require(
-            lottery_state == LOTTERY_STATE.CALCULATING_WINNER,
-            "Winner not yet announced"
-        );
-        // resetting the lottery for the next round
-        players = new address payable[](0);
-        lottery_state = LOTTERY_STATE.CLOSED;
-    }
+    })
 
-    // returning the contract's balance in wei
-    function getBalance() public view returns (uint256) {
-        // only the manager is allowed to call it
-        require(msg.sender == manager);
-        return address(this).balance;
-    }
-}
+
+    it('should set the lottery state to CALCULATING_WINNER', async () => {
+        let instance = await Lottery.deployed();
+        //let picking = await instance.pickWinner({ from: accounts[0] })
+        let lottery_state = await instance.lottery_state();
+        assert.equal(lottery_state, 2)
+
+    })
+
+    it('should set the final balance to 0 after rewarding winner', async () => {
+        let instance = await Lottery.deployed();
+        let balance = await instance.getBalance({ from: accounts[0] });
+        assert.equal('5000000000000000000', balance.toString());
+        await instance.rewardWinner({ from: accounts[0] });
+        let balanceEnd = await instance.getBalance({ from: accounts[0] });
+        assert.equal('0', balanceEnd.toString());
+        // we considering that account 1 entered 3 times as seen below 
+        // 5000000000000000000 * 0.9 = '4500000000000000000';
+    })
+
+})
+
