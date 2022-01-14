@@ -3,7 +3,7 @@ const Lottery = artifacts.require("Lottery");
 
 contract('Lottery', async (accounts) => {
 
-    it('should initialise the lottery state to closed', async () => {
+    it('should initialise lottery state to clpsed', async () => {
         let instance = await Lottery.deployed();
         let lottery_state = await instance.lottery_state();
         assert.equal(lottery_state, 1)
