@@ -1,10 +1,12 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity ^0.6.12;
+pragma solidity ^0.8.0;
 
-contract Lottery {
+import "@openzeppelin/contracts/access/Ownable.sol";
+
+contract Lottery is Ownable {
     address payable[] public players;
-    address public manager;
+    //address public manager;
     address payable public winner;
 
     enum LOTTERY_STATE {
@@ -14,13 +16,15 @@ contract Lottery {
     }
     LOTTERY_STATE public lottery_state;
 
-    constructor() public {
+    event MoneySent(address, uint256, address, uint256);
+
+    constructor() {
         lottery_state = LOTTERY_STATE.CLOSED;
-        manager = msg.sender;
+       // manager = msg.sender;
     }
 
     function startLottery() public {
-        require(msg.sender == manager, "only manager can start lottery");
+       // require(msg.sender == manager, "only manager can start lottery");
         require(
             lottery_state == LOTTERY_STATE.CLOSED,
             "Cannot start a new lottery yet"
@@ -31,9 +35,9 @@ contract Lottery {
 
     function enter() public payable {
         require(lottery_state == LOTTERY_STATE.OPEN);
-        require(msg.sender != manager);
+        require(msg.sender != owner());
         require(msg.value >= 0.001 ether, "Not enough to enter");
-        players.push(msg.sender);
+        players.push(payable(msg.sender));
     }
 
     // helper function that returns a big random integer
@@ -50,11 +54,11 @@ contract Lottery {
             );
     }
 
-    function pickWinner() public returns (address) {
+    function pickWinner() public onlyOwner returns (address) {
         lottery_state = LOTTERY_STATE.CALCULATING_WINNER;
 
         // only the manager can pick a winner if there are at least 3 players in the lottery
-        require(msg.sender == manager);
+        //require(msg.sender == manager);
         require(players.length >= 3);
 
         uint256 r = random();
@@ -65,32 +69,32 @@ contract Lottery {
         return winner;
     }
 
-    function rewardWinner() public {
-        require(msg.sender == manager);
-        uint256 managerFee = (getBalance() * 10) / 100; // manager fee is 10%
-        uint256 winnerPrize = (getBalance() * 90) / 100; // winner prize is 90%
+    function rewardWinner() public onlyOwner {
+        //require(msg.sender == manager);
+        uint256 ownerFee = ( address(this).balance * 10) / 100; // manager fee is 10%
+        uint256 winnerPrize = ( address(this).balance * 90) / 100; // winner prize is 90%
 
         // transferring 90% of contract's balance to the winner
         winner.transfer(winnerPrize);
 
         // transferring 10% of contract's balance to the manager
-        payable(manager).transfer(managerFee);
+        payable(owner()).transfer(ownerFee);
+        emit MoneySent(winner, winnerPrize, owner(), ownerFee);
+
     }
 
+    
+
     function endLottery() public {
-        require(
-            lottery_state == LOTTERY_STATE.CALCULATING_WINNER,
-            "Winner not yet announced"
-        );
+        //require(
+            //lottery_state == LOTTERY_STATE.CALCULATING_WINNER,
+           // "Winner not yet announced"
+        //);
         // resetting the lottery for the next round
         players = new address payable[](0);
+        winner = payable(address(0));
         lottery_state = LOTTERY_STATE.CLOSED;
     }
 
-    // returning the contract's balance in wei
-    function getBalance() public view returns (uint256) {
-        // only the manager is allowed to call it
-        require(msg.sender == manager);
-        return address(this).balance;
-    }
 }
+
