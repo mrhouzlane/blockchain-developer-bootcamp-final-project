@@ -2,52 +2,33 @@
 
 Repository created for the final Consensys Bootcamp 2021 project.
 
-### Application for betting on a team and getting rewards : 
-
-
 # Lottery algorithm 
 
 The ConsenSys Bootcamp Final project used the Ethereum blockchain network to create an application that is tested and compiled. 
 
 
-#Worflow and structure 
+# Worflow and structure 
 
 ```
 
 blockchain-developer-bootcamp-final-project
- (root)
-+-- contracts
-|   +-- games.sol   
-|   +-- balances.sol
-|   +-- TheGames.sol 
-|   +-- placeBet.sol   
-|  
-+-- docs
-|   +-- avoiding_common_attacks.md  
-|   +-- design_pattern_decisions.md
-|   +-- deployed_address.txt
-|   
-|
-+-- migrations
-|   +-- 1_games.js 
-|
-+-- node_modules
-|   +-- @openzeppelin/contracts
-|
-+-- src
-|   +-- index.html
-|   +-- App.js
-|   +-- styles.css
-|
-+-- test
-|   +-- games.test.js    
-|
-+-- truffle-config.js
-+-- package.json
 
-+-- README.md
-+-- Longterm.md
-+-- 
+── build/contracts
+	├── Lottery.json
+	└── Migrations.json
+├── public
+└── contracts
+	├── Lottery.sol
+	├── Migrations.sol 
+	└── migrations 
+		├──1_initial_migration.js
+		└──2_lottery_migrations.js
+	├── simpledapp
+	 ├── app.css
+	 ├── index.html
+	 └── Lotterydapp.js
+└── test 
+  └──  Lottery_test.js 
 
 ```
 
@@ -78,7 +59,7 @@ npm -i -g truffle
 ```
 
 
-3.2For ganache-cli
+3.2 For ganache-cli
 
 ```
 npm -i -g ganache-cli
@@ -93,12 +74,11 @@ npm -i -g ganache-cli
 
 7. Deploy contracts to Ganache
 
-+ If using ganache-cli, go to truffle config file and change network id to 8545.
++ If using ganache-cli, go to truffle config file and change network id to 7545.
 
 ```
 truffle compile
 ```
-
 Then run
 ```
 truffle migrate
