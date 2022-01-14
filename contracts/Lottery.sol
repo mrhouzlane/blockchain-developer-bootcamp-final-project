@@ -71,8 +71,8 @@ contract Lottery is Ownable {
 
     function rewardWinner() public onlyOwner {
         //require(msg.sender == manager);
-        uint256 ownerFee = ( address(this).balance * 10) / 100; // manager fee is 10%
-        uint256 winnerPrize = ( address(this).balance * 90) / 100; // winner prize is 90%
+        uint256 ownerFee = ( address(this).balance * 5) / 100; // owner fee is 5%
+        uint256 winnerPrize = ( address(this).balance * 95) / 100; // winner prize is 95%
 
         // transferring 90% of contract's balance to the winner
         winner.transfer(winnerPrize);
