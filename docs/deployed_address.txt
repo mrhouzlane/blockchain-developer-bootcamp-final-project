@@ -1,5 +1,4 @@
 Test Network = RINKEBY 
 
-Lottery Contract address = "0x506957023aE746B2fcF3598Cc9a0FF33FBAa488b" 
+Lottery Contract address = "0xbAc124E4E9Ba2D46DC1B61596be1AB316CA160Bc" 
 
-Lottery Contract address video = "0x506957023aE746B2fcF3598Cc9a0FF33FBAa488b" 
