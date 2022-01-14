@@ -1,17 +1,23 @@
-Avoiding Common Attacks 
+###Avoiding Common Attacks 
 
-Solidity compiler 
+#### Solidity compiler 
 
-The contract code in this project uses a compiler version equal to 0.8.0 
+- Using Specific Compiler Pragma: Solidity 0.8.0 was used in Lottery.sol ( [SWC-103](https://swcregistry.io/docs/SWC-103) ) 
 
-Modifiers 
+### Proper Use of Require, Assert and Revert:
+
+** Require when (owner != msg.sender) 
+** Assert for tests 
+** Revert to catch errors 
+
+#### Visibily functions [SWC-100](https://swcregistry.io/docs/SWC-100)
+
+Proper setting of visibility for functions: Functions are specified as being external, public, internal or private to reduce the attack surface of a contract system
+
+#### Modifiers 
 
 The contract makes use of multiple modifiers: 
 
-- Ownable modifier of OpenZeppelin Ownable contract 
-
-Reentrancy 
-
-Winner balance 
+- Ownable modifier of OpenZeppelin Ownable contract. 
 
 
