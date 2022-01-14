@@ -21,7 +21,8 @@ Repository created for the final Consensys Bootcamp 2021 project.
 
 ## Directory structure 
 
-blockchain-developer-bootcamp-final-project
+
+`````
 
 ├── .history
 ├── .vscode
@@ -48,6 +49,7 @@ blockchain-developer-bootcamp-final-project
 └── .gitignore
 └── truffle.config.js
    
+`````
 
 ## Installation and Setup
 
