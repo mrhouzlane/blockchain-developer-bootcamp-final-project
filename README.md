@@ -1,49 +1,37 @@
 # blockchain-developer-bootcamp-final-project
 
-# blockchain-developer-bootcamp-final-project
+Link Netlify : [Lottery Dapp](https://lotterygamebootcamp.netlify.app/)
+Youtube : 
+
+### Lottery game : 
 
 Repository created for the final Consensys Bootcamp 2021 project.
 
-### Application for betting on a team and getting rewards : 
 
-A guessing game : 5 players can bet on a number between 0 and 5. An oracle provide the winner number and look for the playe who obtained the closest result.
+#### Idea of the lottery : 
+
+- The manager of the Lottery(owner) collects money for players, and then select a winner using a random function. One player is selected and wins, and others lose their money. 
+
+#### Rules : 
+
+- The minimum number of players must be 3.  
+- Only the manager of the contract(owner) can start the lottery and announce the winner.
+- The minimum cost to participate in the lottery is 0.001 ETH. 
 
 
-# Project Flow 
-
-<ul> 
-   <li> Create smart contract template that all better will use. </li> 
-   <li> Create front end application for the user. </li> 
-
-</ul> 
-   
 # Future Ideas
 
-<ul> 
-   <li> Use IPFS or similar system to store user data </li> 
-   <li> Use MetaMask to login to users account </li> 
-   <li> Add protocols (like UnlockProtocol -- NFT Contract ) to access Prenium betting advantages  </li> 
-   <li> Upgrade the smart contract to make it a lottery / Casino games </li> 
-   <li> Deploy the game on another network to minimize the gas cost </li> 
-</ul> 
 
-# Chainlink Randomness 
-
-To get a random number we are using Chainlink VRFConsumerBase. Please follow these steps :
-
-1. Fund your contract with some LINK 
-
-You can get testnet LINK on Rinkeby here : 
-
-```https://faucets.chain.link/rinkeby?_ga=2.241222538.966483450.1639086758-993978172.1636569702 ```
+- Using VRF Chainlink to generate random numbers. 
+- Add a more complex games (Russian Roulette for example). 
+- Decentralize the decision to announce the winner
 
 
-2. Verify your Chainlink VRF Contract Addresses with the network used here : 
-
-``` https://docs.chain.link/docs/vrf-contracts/ ```
+## Directory structure 
 
 
-# Installation and Setup
+
+## Installation and Setup
 
 1. Clone the repository 
 
@@ -85,22 +73,33 @@ npm -i -g ganache-cli
 
 7. Deploy contracts to Ganache
 
-+ If using ganache-cli, go to truffle config file and change network id to 8545.
+8. If using ganache-cli, go to truffle-config.js and change network id to 7545 and run : 
+
+```
+ganache-cli 
+
+```
+9. In a separate terminal run : 
 
 ```
 truffle compile
+
 ```
 
-Then run
+Then run : 
+
 ```
 truffle migrate
+
 ```
 
-8.Start application from client directory
+And for testing : 
+
 ```
-cd client
-npm start
+truffle test 
+
 ```
+
 
 
 
