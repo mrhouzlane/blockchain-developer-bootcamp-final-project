@@ -42,6 +42,8 @@ blockchain-developer-bootcamp-final-project
 	 └── Lotterydapp.js
 └── test 
   └──  Lottery_test.js 
+  └──  .gitkeep
+  
 
 ```
 
