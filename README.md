@@ -4,35 +4,52 @@ Repository created for the final Consensys Bootcamp 2021 project.
 
 ### Application for betting on a team and getting rewards : 
 
-An application that allows you to bet on either Team 1 or Team 2 or a draw and participate to the pool (1) , (2) or 3(draw). 
 
-# Problem 
+# Lottery algorithm 
 
-Every betting platform is a win or loose. What is changing here is the possibility to still get rewards from a pool even if you loose,
-while participating to a pool when choosing your side. 
+The ConsenSys Bootcamp Final project used the Ethereum blockchain network to create an application that is tested and compiled. 
 
-# Solution
 
-smartBet will allow you to bet on a team and contributing to the pool of this team. 
+#Worflow and structure 
 
-# Project Flow 
+```
 
-<ul> 
-   <li> Create smart contract template that all better will use. </li> 
-   <li> Create front end application for both better and brooker to interact with. </li> 
-   <li> Allow betters to choose their side and participate to a pool. </li> 
-   <li> </li> 
-   <li> </li> 
-</ul> 
-   
-# Future Ideas
+blockchain-developer-bootcamp-final-project
+ (root)
++-- contracts
+|   +-- games.sol   
+|   +-- balances.sol
+|   +-- TheGames.sol 
+|   +-- placeBet.sol   
+|  
++-- docs
+|   +-- avoiding_common_attacks.md  
+|   +-- design_pattern_decisions.md
+|   +-- deployed_address.txt
+|   
+|
++-- migrations
+|   +-- 1_games.js 
+|
++-- node_modules
+|   +-- @openzeppelin/contracts
+|
++-- src
+|   +-- index.html
+|   +-- App.js
+|   +-- styles.css
+|
++-- test
+|   +-- games.test.js    
+|
++-- truffle-config.js
++-- package.json
 
-<ul> 
-   <li> Use IPFS or similar system to store user data </li> 
-   <li> Use MetaMask to login to users account </li> 
-   <li> Add protocols (like UnlockProtocol -- NFT Contract ) to access Prenium betting advantages  </li> 
-</ul> 
++-- README.md
++-- Longterm.md
++-- 
 
+```
 
 # Installation and Setup
 
