@@ -19,15 +19,9 @@ Repository created for the final Consensys Bootcamp 2021 project.
 - The minimum cost to participate in the lottery is 0.001 ETH. 
 
 
-# Future Ideas
-
-
-- Using VRF Chainlink to generate random numbers. 
-- Add a more complex games (Russian Roulette for example). 
-- Decentralize the decision to announce the winner
-
-
 ## Directory structure 
+
+
 
 
 
@@ -100,6 +94,11 @@ truffle test
 
 ```
 
+## Future Ideas
+
+- Using VRF Chainlink to generate random numbers. 
+- Add a more complex games (Russian Roulette for example). 
+- Decentralize the decision to announce the winner
 
 
 
