@@ -36,7 +36,7 @@ blockchain-developer-bootcamp-final-project
 	└── migrations 
 		├──1_initial_migration.js
 		└──2_lottery_migrations.js
-	├── simpledapp
+	├── src
 	 ├── app.css
 	 ├── index.html
 	 └── Lotterydapp.js
