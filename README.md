@@ -6,6 +6,19 @@ Repository created for the final Consensys Bootcamp 2021 project.
 
 The ConsenSys Bootcamp Final project used the Ethereum blockchain network to create an application that is tested and compiled. 
 
+# Game : Lottery 
+
+The idea of this Lottery Game :
+
+Owner is collecting money from players. This money is stored in the smartcontract balance, and a randomly selected player , "winner" is getting 95% of the jackpot and "owner" is getting 5% fees. Other players are loosing all their money. 
+
+### Entry conditions to the lottery :
+
+Lottery must be Opened by the owner before anyone can jump in. 
+Anyone is able to send a fixed amount of 0.001 ETH to the Lottery. 
+A player can send multiple times 0.001 ETH. 
+
+This is the same logic as a lottery where you can buy tickets (multiple if you want), but this time, this lottery is deployed in the blockchain. 
 
 # Worflow and structure 
 
