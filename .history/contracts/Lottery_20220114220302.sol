@@ -29,7 +29,7 @@ contract Lottery is Ownable {
     }
 
     //@notice Changes the status of lottery to open
-    function startLottery() public onlyOwner {
+    function startLottery() public {
         // require(msg.sender == manager, "only manager can start lottery");
         require(
             lottery_state == LOTTERY_STATE.CLOSED,
@@ -82,19 +82,18 @@ contract Lottery is Ownable {
         uint256 ownerFee = (address(this).balance * 5) / 100; // owner fee is 5%
         uint256 winnerPrize = (address(this).balance * 95) / 100; // winner prize is 95%
 
-        // transferring 95% of Balance of contract to the winner
+        // transferring 90% of Balance of contract to the winner
         winner.transfer(winnerPrize);
 
-        // transferring 5% of Balance of contract to the owner
+        // transferring 10% of Balance of contract to the owner
         payable(owner()).transfer(ownerFee);
         emit MoneySent(winner, winnerPrize, owner(), ownerFee);
     }
 
     //@notice Reset the lottery
-    function endLottery() public onlyOwner {
-        // Reset players[] to 0
+    function endLottery() public {
+        // resetting the lottery for the next round
         players = new address payable[](0);
-        // Reset the winner
         winner = payable(address(0));
         lottery_state = LOTTERY_STATE.CLOSED;
     }

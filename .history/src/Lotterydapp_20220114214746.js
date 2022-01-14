@@ -1,8 +1,15 @@
 console.log("Welcome to the Lottery")
 
+// //This is the top of application.js
+// require('dotenv').config()
+// //This is an example of process.env later in the file
+// var PrivateKey = new Buffer(process.env.["PRIVATE_KEY"], "hex")
+// //Here is another example of using process.env
+// const APIKey = process.env.API_KEY;
+
 
 // ABI / Address 
-const lotteryAddress = "0xbAc124E4E9Ba2D46DC1B61596be1AB316CA160Bc"
+const lotteryAddress = "0x38076C292A282Ff1f082F16559b8A133D7AeF0b5"
 const ABI = [
     {
         "inputs": [],
@@ -71,19 +78,6 @@ const ABI = [
         "name": "enter",
         "outputs": [],
         "stateMutability": "payable",
-        "type": "function"
-    },
-    {
-        "inputs": [],
-        "name": "getAmount",
-        "outputs": [
-            {
-                "internalType": "uint256",
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "stateMutability": "view",
         "type": "function"
     },
     {
@@ -266,10 +260,11 @@ window.addEventListener('load', async () => {
 // WINNER SECTION
 const winnerIs = document.getElementById("get-winner");
 winnerIs.onclick = async () => {
+
     await lotteryContract.methods.pickWinner().send({ from: ethereum.selectedAddress });
     let winnerLL = document.getElementById("winner")
-    const win = await lotteryContract.methods.winner().call()
-    winnerLL.innerHTML = "The winner is : " + win
+    const winner = await lotteryContract.methods.winner().call()
+    winnerLL.innerHTML = "The winner is : " + winner
 }
 
 // REWARD SECTION 
@@ -295,17 +290,17 @@ window.addEventListener('load', async () => {
     const state = await lotteryContract.methods.lottery_state().call();
     if (state == "0") {
         console.log("Lottery OPEN")
-        let openState = document.getElementById("Lottery State0")
+        let openState = document.getElementById("Lottery State")
         openState.innerHTML = "Lottery is OPEN"
     }
     if (state == "1") {
         console.log("Lottery CLOSED")
-        let openState = document.getElementById("Lottery State1")
+        let openState = document.getElementById("Lottery State")
         openState.innerHTML = "Lottery is CLOSED"
     }
     if (state == "2") {
         console.log("WINNER REVEALED")
-        let closedState = document.getElementById("Lottery State2")
+        let closedState = document.getElementById("Loading")
         closedState.innerHTML = "WINNER REVEALED";
     }
 })

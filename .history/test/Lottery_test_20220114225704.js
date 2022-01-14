@@ -23,11 +23,12 @@ contract('Lottery', async (accounts) => {
         } catch (e) {
             console.error(e)
         }
+
     })
 
     it('should set the contract state to open ', async () => {
         let instance = await Lottery.deployed();
-        await instance.startLottery({ from: accounts[0] });
+        await instance.startLottery({ from: account[0] });
         let lottery_state = await instance.lottery_state();
         assert.equal(lottery_state, 0)
     })

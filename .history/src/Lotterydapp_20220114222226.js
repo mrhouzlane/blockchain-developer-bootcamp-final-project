@@ -1,9 +1,30 @@
 console.log("Welcome to the Lottery")
 
+// //This is the top of application.js
+// require('dotenv').config()
+// //This is an example of process.env later in the file
+// var PrivateKey = new Buffer(process.env.["PRIVATE_KEY"], "hex")
+// //Here is another example of using process.env
+// const APIKey = process.env.API_KEY;
+
 
 // ABI / Address 
 const lotteryAddress = "0xbAc124E4E9Ba2D46DC1B61596be1AB316CA160Bc"
 const ABI = [
+    {
+        "inputs": [],
+        "name": "endLottery",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "enter",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
     {
         "inputs": [],
         "stateMutability": "nonpayable",
@@ -61,16 +82,49 @@ const ABI = [
     },
     {
         "inputs": [],
-        "name": "endLottery",
+        "name": "pickWinner",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "renounceOwnership",
         "outputs": [],
         "stateMutability": "nonpayable",
         "type": "function"
     },
     {
         "inputs": [],
-        "name": "enter",
+        "name": "rewardWinner",
         "outputs": [],
-        "stateMutability": "payable",
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "startLottery",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "newOwner",
+                "type": "address"
+            }
+        ],
+        "name": "transferOwnership",
+        "outputs": [],
+        "stateMutability": "nonpayable",
         "type": "function"
     },
     {
@@ -113,19 +167,6 @@ const ABI = [
         "type": "function"
     },
     {
-        "inputs": [],
-        "name": "pickWinner",
-        "outputs": [
-            {
-                "internalType": "address",
-                "name": "",
-                "type": "address"
-            }
-        ],
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
         "inputs": [
             {
                 "internalType": "uint256",
@@ -155,40 +196,6 @@ const ABI = [
             }
         ],
         "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "inputs": [],
-        "name": "renounceOwnership",
-        "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "inputs": [],
-        "name": "rewardWinner",
-        "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "inputs": [],
-        "name": "startLottery",
-        "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "inputs": [
-            {
-                "internalType": "address",
-                "name": "newOwner",
-                "type": "address"
-            }
-        ],
-        "name": "transferOwnership",
-        "outputs": [],
-        "stateMutability": "nonpayable",
         "type": "function"
     },
     {
@@ -268,7 +275,7 @@ const winnerIs = document.getElementById("get-winner");
 winnerIs.onclick = async () => {
     await lotteryContract.methods.pickWinner().send({ from: ethereum.selectedAddress });
     let winnerLL = document.getElementById("winner")
-    const win = await lotteryContract.methods.winner().call()
+    const winn = await lotteryContract.methods.winner().call()
     winnerLL.innerHTML = "The winner is : " + win
 }
 
@@ -295,17 +302,17 @@ window.addEventListener('load', async () => {
     const state = await lotteryContract.methods.lottery_state().call();
     if (state == "0") {
         console.log("Lottery OPEN")
-        let openState = document.getElementById("Lottery State0")
+        let openState = document.getElementById("Lottery State")
         openState.innerHTML = "Lottery is OPEN"
     }
     if (state == "1") {
         console.log("Lottery CLOSED")
-        let openState = document.getElementById("Lottery State1")
+        let openState = document.getElementById("Lottery State")
         openState.innerHTML = "Lottery is CLOSED"
     }
     if (state == "2") {
         console.log("WINNER REVEALED")
-        let closedState = document.getElementById("Lottery State2")
+        let closedState = document.getElementById("Lottery State")
         closedState.innerHTML = "WINNER REVEALED";
     }
 })

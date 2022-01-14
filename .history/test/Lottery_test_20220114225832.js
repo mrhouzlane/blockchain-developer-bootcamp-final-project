@@ -23,6 +23,8 @@ contract('Lottery', async (accounts) => {
         } catch (e) {
             console.error(e)
         }
+        return error;
+
     })
 
     it('should set the contract state to open ', async () => {
