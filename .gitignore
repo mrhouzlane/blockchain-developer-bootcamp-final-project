@@ -1,0 +1,5 @@
+.env
+.DS_store
+.node_modules
+.seed
+

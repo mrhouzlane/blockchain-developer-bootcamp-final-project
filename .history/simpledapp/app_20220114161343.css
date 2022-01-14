@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap');
+
+* {
+    font-family : 'Source Sans Pro', sans-serif; 
+    letter-spacing: 4px;
+    background-color: #25252A;
+}
+
+

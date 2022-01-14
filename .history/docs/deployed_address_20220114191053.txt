@@ -1,0 +1,5 @@
+Test Network = RINKEBY 
+
+Lottery Contract address = " " 
+
+Lottery Contract address video = " " 

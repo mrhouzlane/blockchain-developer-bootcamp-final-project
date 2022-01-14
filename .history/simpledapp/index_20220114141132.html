@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .entry-header h2 {
+            text-align: center;
+            width: 100%;
+        }
+
+        body {
+            background-color: rgb(255, 153, 238);
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            padding: 8px;
+            background-color: #dddddd;
+        }
+
+
+        .buttonA {
+            background-color: rgba(233, 27, 188, 0.867);
+            border: none;
+            color: rgb(20, 2, 2);
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 19px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .buttonB {
+            background-color: rgba(245, 114, 8, 0.76);
+            border: none;
+            color: rgb(20, 19, 19);
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .button1 {
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 1em;
+        }
+
+        .button2 {
+            border-radius: 200px;
+            font-family: inherit;
+            font-size: 1em;
+        }
+
+        .flex {
+            display: flex;
+            justify-content: center;
+        }
+
+        .p2 {
+            font-family: Arial, Verdana, sans-serif;
+        }
+    </style>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Lottery </title>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+
+</head>
+
+<body>
+    <ul>
+        <li><a href="https://github.com/mrhouzlane/blockchain-developer-bootcamp-final-project">Github [Repository]</a>
+        </li>
+    </ul>
+
+
+    <h1 class="flex p2">This is the Lottery Dapp</h1>
+    <!-- 1. Detect Metamak is/ is not installed  -->
+    <div id="mm-detected"> </div>
+
+    <button id="mm-connect" class="buttonB button2 p2">Connect to MetaMask</button>
+
+    <div id="mm-current-account"></div>
+
+    <div id="Lottery State"></div>
+    <div id="Loading"></div>
+    <div id="player"></div>
+    <div id="address0"></div>
+
+
+    <button id="lottery-start-box" class="buttonA button1 ">Start the Lottery</button>
+    <button id="lottery-enter-box" class="buttonA button1 ">Enter the Lottery</button>
+    <button id="get-winner" class="buttonA button1 p2">Pick Winner !! </button>
+
+    <div id="balance"></div>
+    <button id="get-balance" class="buttonA button1 ">Jackpot !!!</button>
+
+    <div id="winner"></div>
+    <button id="rewards" class="buttonA button1 ">Pay the Winner</button>
+
+    <button id="EndLL" class="buttonA button1 p2">Close Lottery </button>
+    <script src="Lotterydapp.js"></script>
+</body>
+
+</html>

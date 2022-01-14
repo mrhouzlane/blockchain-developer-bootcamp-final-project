@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .button {
+            background-color: #4CAF50;
+            /* Green */
+            border: none;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .button1 {
+            border-radius: 10px;
+        }
+
+        .button2 {
+            border-radius: 4px;
+        }
+
+        .button3 {
+            border-radius: 8px;
+        }
+
+        .button4 {
+            border-radius: 12px;
+        }
+
+        .button5 {
+            border-radius: 50%;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lottery </title>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+
+</head>
+
+<body>
+    <h1>This is the Lottery Dapp</h1>
+    <!-- 1. Detect Metamak is/ is not installed  -->
+    <div id="mm-detected"> </div>
+
+    <button id="mm-connect">Connect to MetaMask</button>
+
+    <div id="mm-current-account"></div>
+
+    <button id="lottery-start-box" class="button button1">Start the Lottery</button>
+    <button id="lottery-enter-box">Enter the Lottery</button>
+    <button id="get-winner">The winner is </button>
+
+    <script src="Lotterydapp.js"></script>
+</body>
+
+</html>

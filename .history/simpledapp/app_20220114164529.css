@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap');
+
+* {
+    font-family : 'Source Sans Pro', sans-serif; 
+    background-color: #8355ee;
+}
+
+
+.buttonA {
+    background-color: rgba(255, 134, 21, 0.867);
+    border: none;
+    color: rgb(20, 2, 2);
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 19px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button1 {
+    border-radius: 10px;
+    font-family: Verdana;
+    font-size: 1.3em;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+}
+
+.state {
+    width: 130px;
+    font-size: 30px;
+    background-color: rgb(0, 255, 0);
+    position: absolute;
+    left: 700px;
+    right: 100px;
+}
+
+.account {
+    display: flex;
+    justify-content: left;
+    font-size: 22px;
+    top : 500px;
+    position: absolute;
+}
+
+.reveal{
+    width: 130px;
+    font-size: 30px;
+    font-size: 23px;
+    top : 400px;
+    background-color: rgb(0, 255, 0);
+    position: absolute;
+}

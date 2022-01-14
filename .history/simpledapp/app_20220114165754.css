@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap');
+
+* {
+    font-family : 'Source Sans Pro', sans-serif; 
+    background-color: #8355ee;
+}
+
+
+.buttonA {
+    background-color: rgba(255, 134, 21, 0.867);
+    border: none;
+    color: rgb(20, 2, 2);
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 19px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button1 {
+    border-radius: 10px;
+    font-family: Verdana;
+    font-size: 1.3em;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+}
+
+.state {
+    width: 130px;
+    font-size: 30px;
+    background-color: rgb(0, 255, 0);
+    position: absolute;
+    left: 700px;
+    right: 2000px;
+}
+
+.account {
+    display: flex;
+    justify-content: left;
+    font-size: 22px;
+    top : 500px;
+    position: absolute;
+}
+
+.reveal{
+    font-size: 30px;
+    position: absolute;
+    left: 900px;
+    right: 300px;
+    color: orange;
+    top: 700px;
+}
+
+.btn-group .button {
+    background-color: #4CAF50; /* Green */
+    border: 1px solid green;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    float: left;
+  }
+  
+.btn-group .button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+  }
+  
+.btn-group .button:hover {
+    background-color: #3e8e41;
+  }
+
