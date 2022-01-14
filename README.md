@@ -21,9 +21,33 @@ Repository created for the final Consensys Bootcamp 2021 project.
 
 ## Directory structure 
 
+blockchain-developer-bootcamp-final-project
 
-
-
+├── .history
+├── .vscode
+├── build/contracts
+└──  contracts
+	├── Lottery.sol
+	├── Migrations.sol
+└── docs
+	├── avoiding_common_attacks.md
+	└── deployed_address.txt
+   └── design_pattern_decisions.md
+├── migrations 
+   └── 1_initial_migrations.js
+   └── 2_lottery_migrations.js
+└── src
+	├── .history
+	└── app.css
+   └── index.html
+   └── Lotterydapp.js
+└── test 
+   ├── .gitkeep
+   └── Lottery_test.js
+└── .env
+└── .gitignore
+└── truffle.config.js
+   
 
 ## Installation and Setup
 
