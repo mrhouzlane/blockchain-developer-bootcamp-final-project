@@ -3,6 +3,9 @@
 ##### Link Netlify : [Lottery Dapp](https://lotterygamebootcamp.netlify.app/)
 ##### Video :  [screencast walking through the project](https://www.youtube.com/watch?v=ktGePpe3lNw)
 
+Address for the NFT Certificate : 0x839B878873998F02cE2f5c6D78d1B0842e58F192 
+
+
 ### Lottery game : 
 
 Repository created for the final Consensys Bootcamp 2021 project.
