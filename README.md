@@ -1,7 +1,7 @@
 # blockchain-developer-bootcamp-final-project
 
 ##### Link Netlify : [Lottery Dapp](https://lotterygamebootcamp.netlify.app/)
-##### Youtube : 
+##### Video :  [screencast walking through the project](https://www.youtube.com/watch?v=ktGePpe3lNw)
 
 ### Lottery game : 
 
